@@ -1,7 +1,4 @@
-import {
-  findInlineVideoElement,
-  sendYouTubeSeekCommand
-} from "./lib/video-elements";
+import { findVideo } from "./lib/video-finder";
 
 scrapbox.PopupMenu.addButton({
   title: time => {
@@ -19,9 +16,9 @@ scrapbox.PopupMenu.addButton({
       return null;
     }
 
-    const element = findInlineVideoElement(document);
+    const video = findVideo(document);
 
-    sendYouTubeSeekCommand(element, seconds);
+    video.seek(seconds);
   }
 });
 
