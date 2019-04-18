@@ -1,0 +1,24 @@
+{
+  "name": "scrapbox-video-seek-button",
+  "version": "0.1.0",
+  "description": "Video seek button extension to Scrapbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nobuhiro Nakamura <lefb766@live.jp>",
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^1.17.0"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "parcel": "^1.12.3",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
