@@ -4,6 +4,7 @@
   "description": "Video seek button extension to Scrapbox",
   "main": "index.js",
   "scripts": {
+    "build": "parcel build --no-source-maps index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nobuhiro Nakamura <lefb766@live.jp>",
