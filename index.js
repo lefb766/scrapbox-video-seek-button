@@ -1,4 +1,4 @@
-import { findVideo } from "./lib/video-finder";
+import { AvailableVideos } from "./lib/available-videos";
 import { parseTimePoint } from "./lib/time-point";
 
 scrapbox.PopupMenu.addButton({
@@ -17,7 +17,11 @@ scrapbox.PopupMenu.addButton({
       return null;
     }
 
-    const video = findVideo(document);
+    const video = AvailableVideos.findFromDocument(document).firstOrNull();
+
+    if (!video) {
+      return;
+    }
 
     video.seek(seconds);
   }
