@@ -1,5 +1,5 @@
 import { AvailableVideos } from "./lib/available-videos";
-import { parseTimePoint } from "./lib/time-point";
+import { TimePoint } from "./lib/time-point";
 
 setInterval(() => {
   AvailableVideos.findFromDocument(document).videos.forEach(v => {
@@ -9,17 +9,17 @@ setInterval(() => {
 
 scrapbox.PopupMenu.addButton({
   title: time => {
-    const seconds = parseTimePoint(time);
-    if (seconds === null) {
+    const timePoint = TimePoint.parse(time);
+    if (timePoint === null) {
       return null;
     }
 
-    return `Jump to ${time}`;
+    return `Jump to ${timePoint.toFriendlyFormat()}`;
   },
 
   onClick: time => {
-    const seconds = parseTimePoint(time);
-    if (seconds === null) {
+    const timePoint = TimePoint.parse(time);
+    if (timePoint === null) {
       return null;
     }
 
@@ -29,6 +29,6 @@ scrapbox.PopupMenu.addButton({
       return;
     }
 
-    video.seek(seconds);
+    video.seek(timePoint.seconds);
   }
 });
