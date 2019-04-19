@@ -23,7 +23,7 @@ scrapbox.PopupMenu.addButton({
       return null;
     }
 
-    const video = AvailableVideos.findFromDocument(document).firstOrNull();
+    const video = AvailableVideos.findFromDocument(document).topOrNull();
 
     if (!video) {
       return;
