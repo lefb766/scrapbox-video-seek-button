@@ -1,6 +1,12 @@
 import { AvailableVideos } from "./lib/available-videos";
 import { parseTimePoint } from "./lib/time-point";
 
+setInterval(() => {
+  AvailableVideos.findFromDocument(document).videos.forEach(v => {
+    v.ensureControllable();
+  });
+}, 2000);
+
 scrapbox.PopupMenu.addButton({
   title: time => {
     const seconds = parseTimePoint(time);
