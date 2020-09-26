@@ -25,8 +25,9 @@ $ npm run build
 	- `::before`疑似要素で記号を追加しているのは、クリック判定されやすくするためです
 	```css
 	code:style.css
-	 .deco-\> { color: cornflowerblue; text-decoration: underline; cursor: pointer; }
-	 .deco-\>::before { content: "▶️️"; text-decoration: none; }
+	 .deco-\> { color: #f77; text-decoration: underline; cursor: pointer; }
+ 	 .deco-\>::before { content: "▶️️"; text-decoration: none; color: #fff; display: inline-block; background: #e55; border-radius: 1em; width: 48px; height: 32px; line-height: 32px; text-align: center; margin-right: 5px; vertical-align: middle; font-size: 16px; }
+	 .deco-\>:hover::before { background: #f77; transition: background 0.2s; }
 	```
 
 ## 使い方
